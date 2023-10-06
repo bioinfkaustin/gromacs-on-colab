@@ -1,5 +1,15 @@
 ## Changelog
 
+### 2023-10-06
+
+New features:
+
+* **Tutorial:** the `README.md` file now contains a quick-start guide describing how to run a protein-ligand simulation
+
+Bugfixes:
+
+* **System temperature in CHARMM-GUI:** when a temperature different to the default (i.e. not 303.15 K) is chosen for the protein in Solution Builder or Membrane Builder, this custom temperature is now correctly carried through to the production simulation when `GROMACS_for_CHARMM-GUI.ipynb` makes the project folder and its `grompp.mdp`
+
 ### 2023-09-29
 
 New features in **`Build_to_Google_Drive.ipynb`**:
@@ -13,9 +23,12 @@ In **`GROMACS_for_CHARMM-GUI.ipynb`**:
 
 Updates to existing features:
 
-* **Checkpointing in Google Drive:** instead of the entire trajectory, only "part-files" are periodically uploaded, addressing issue [#3](https://github.com/bioinfkaustin/gromacs-on-colab/issues/3)
 * **GPU optimisation:** bonded interactions are moved to the GPU such that compatible simulations are now fully resident on the GPU; and in the production notebook, [CUDA graphs](https://developer.nvidia.com/blog/a-guide-to-cuda-graphs-in-gromacs-2023) are enabled when compatible
 * **Calculate centroid structures:** a convenient `.pdb` is saved alongside the `.gro`
+
+Bugfixes:
+
+* **Checkpointing in Google Drive:** instead of uploading the entire trajectory each time, only "part-files" are periodically uploaded, addressing issue [#3](https://github.com/bioinfkaustin/gromacs-on-colab/issues/3)
 
 ### 2023-06-28
 
